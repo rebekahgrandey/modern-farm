@@ -1,3 +1,3 @@
-export const plantSeeds = (plan) => {
+export const plantSeeds = (plant) => {
 
 }
