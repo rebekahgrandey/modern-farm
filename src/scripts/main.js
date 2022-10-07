@@ -1,16 +1,21 @@
 console.log("Welcome to the main module")
 
 import { createPlan } from './plan.js'
-import { addPlant } from './field.js'
 import { usePlants } from './field.js'
-import { createAsparagus } from './seeds/asparagus.js'
-import { createCorn } from './seeds/corn.js'
 import { plantSeeds } from './tractor.js'
+import { harvestPlants } from './harvester.js'
+import { catalog } from './catalog.js'
+
 
 const yearlyPlan = createPlan()
 plantSeeds(yearlyPlan)
 const arrayOfPlants = usePlants()
 console.log(arrayOfPlants)
+
+const harvestArray = harvestPlants(arrayOfPlants)
+console.log(harvestArray)
+const catalogPlants = catalog(harvestArray)
+console.log(catalogPlants)
 
 // console.log(yearlyPlan)
 
@@ -34,3 +39,7 @@ console.log(arrayOfPlants)
 // const useThePlants = usePlants(addThePlants)
 // console.log(useThePlants)
 
+const parentHTMLElement = document.querySelector(".container")
+
+
+parentHTMLElement.innerHTML = catalog(harvestArray)
